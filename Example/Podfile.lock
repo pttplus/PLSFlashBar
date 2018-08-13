@@ -1,0 +1,16 @@
+PODS:
+  - PLSFlashBar (0.1.0)
+
+DEPENDENCIES:
+  - PLSFlashBar (from `../`)
+
+EXTERNAL SOURCES:
+  PLSFlashBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PLSFlashBar: c4becad9c095f768b4897102c5c4c2c1d629b4ec
+
+PODFILE CHECKSUM: c95d46e05dad55e5188f5722f70f9afeccf55fa5
+
+COCOAPODS: 1.5.3
