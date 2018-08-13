@@ -7,31 +7,33 @@
 
 import UIKit
 
-public class PLSFlashBar: UIView {
+@objcMembers public class PLSFlashBar: UIView {
+    
     private static var viewTag = 20180812
-    @objc public var isShowing: Bool {
+    
+    public var isShowing: Bool {
         return alpha != 0
     }
     
-    @objc public var text: String? {
+    public var text: String? {
         didSet {
             textLabel.text = text
         }
     }
     
-    @objc public var textColor: UIColor = .white {
+    public var textColor: UIColor = .white {
         didSet {
             textLabel.textColor = textColor
         }
     }
-
-    @objc public var leftImage: UIImage? {
+    
+    public var leftImage: UIImage? {
         didSet {
             leftImageView.image = leftImage
         }
     }
     
-    @objc public var onTapHandler: (() -> Void)?
+    public var onTapHandler: (() -> Void)?
     
     private lazy var textLabel: UILabel = {
         let label = UILabel()
@@ -71,11 +73,11 @@ public class PLSFlashBar: UIView {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
- 
-    @objc public func addTo(navigationController: UINavigationController) {
+    
+    public func addTo(navigationController: UINavigationController) {
         guard let superView = navigationController.view,
             superView.viewWithTag(PLSFlashBar.viewTag) == nil else {
-                return
+            return
         }
         let navigationBar = navigationController.navigationBar
         
@@ -89,13 +91,13 @@ public class PLSFlashBar: UIView {
         topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
     }
     
-    @objc public func show(animated: Bool = true) {
+    public func show(animated: Bool = true) {
         UIView.animate(withDuration: animated ? 0.25 : 0) {
             self.alpha = 1
         }
     }
     
-    @objc public func hide(animated: Bool = true) {
+    public func hide(animated: Bool = true) {
         UIView.animate(withDuration: animated ? 0.25 : 0) {
             self.alpha = 0
         }
