@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PLSFlashBar_Example' do
+  pod 'PLSFlashBar', :path => '../'
+
+  target 'PLSFlashBar_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
